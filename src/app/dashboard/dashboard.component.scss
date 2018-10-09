@@ -1,0 +1,86 @@
+:host ::ng-deep {
+  .sebm-google-map-container,
+  .chart-container {
+    height: 300px;
+    width: 100%;
+    display: block;
+  }
+  .ngx-charts .gridline-path {
+    stroke: rgba(0, 0, 0, 0.096);
+    stroke-width: 0.5;
+  }
+  .small-chart .chart-container {
+    height: 200px;
+  }
+  .small-chart .ngx-charts text {
+    fill: #ffffff !important;
+  }
+  .mat-column-position {
+    max-width: 40px;
+  }
+  .mat-column-value {
+    max-width: 100px;
+    text-align: right;
+  }
+
+  mat-grid-tile {
+    background-image: url("/assets/images/sas-experience.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+  }
+}
+
+ui-carousel{
+  display: block;
+  margin: 0 auto;
+}
+.text{
+  text-align:  center;
+  line-height: 300px;
+  font-size: 40px;
+  color: #fff;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+}
+
+.button{
+  user-select: none;
+  height: 35px;
+  width: 120px;
+  line-height: 35px;
+  color: gray;
+  background: #fff;
+  text-align: center;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+
+  transition: all .3s;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -o-transition: all .3s;
+  -ms-transition: all .3s;
+}
+
+.button:hover{
+  cursor: pointer;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.button img {
+  height: 15px;
+  margin: 10px 5px;
+  margin-right: 15px;
+  float: right;
+  opacity: .7;
+}

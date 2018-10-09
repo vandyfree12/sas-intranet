@@ -1,0 +1,14 @@
+@import "../../assets/styles/scss/components/taskboard";
+:host {
+  display: block;
+  height: calc(100vh - 88px);
+}
+.taskboard {
+  height: 100%;
+}
+.gu-mirror {
+  background-color: white;
+  border-radius: 0.125rem;
+  padding: 0.5rem;
+  opacity: 1;
+}

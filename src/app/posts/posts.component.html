@@ -1,0 +1,94 @@
+<mat-card class="demo-card demo-basic">
+  <mat-accordion [multi]="multi" class="mat-expansion-demo-width">
+    <mat-expansion-panel #panel1  [hideToggle]="hideToggle">
+      <mat-expansion-panel-header>Create <em> &nbsp; Post </em> &nbsp; +</mat-expansion-panel-header>
+      <form>
+        <div fxLayout="row" fxLayoutWrap="wrap" class="">
+          <div fxFlex="20" class="px-xs">
+          </div>
+          <div fxFlex="60" class="px-xs">
+            <mat-form-field class="w-100">
+              <input matInput placeholder="Title">
+            </mat-form-field>
+          </div>
+          <div fxFlex="20" class="px-xs">
+          </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutWrap="wrap" class="">
+          <div fxFlex="20" class="px-xs">
+          </div>
+          <div fxFlex="60" class="px-xs">
+            <mat-form-field class="w-100">
+              <textarea matInput placeholder="Message Description"></textarea>
+            </mat-form-field>
+          </div>
+          <div fxFlex="20" class="px-xs">
+          </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutWrap="wrap" class="">
+          <div fxFlex="20" class="px-xs">
+          </div>
+          <div fxFlex="60" class="px-xs">
+            <mat-form-field class="w-100 chips-demo">
+              <mat-chip-list [tabIndex]="tabIndex"  #chipList2 >
+                <mat-chip *ngFor="let person of people" [color]="color" [selectable]="selectable"
+                          [removable]="removable" (remove)="remove(person)">
+                  {{person.name}}
+                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+              </mat-chip-list>
+              <input placeholder="Tags"
+                     [matChipInputFor]="chipList2"
+                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                     [matChipInputAddOnBlur]="addOnBlur"
+                     (matChipInputTokenEnd)="add($event)" />  
+            </mat-form-field>
+          </div>
+          <div fxFlex="20" class="px-xs">
+          </div>
+        </div>
+
+        <div fxLayout="row">
+          <div fxFlex="20" class="px-xs">
+          </div>
+          <div fxFlex="60" class="px-xs">
+            <button mat-raised-button color="primary" type="submit" >Post Content </button>
+          </div>
+          <div fxFlex="20" class="px-xs">
+          </div>
+        </div>
+      </form>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel #panel2 [hideToggle]="hideToggle" [disabled]="disabled">
+      <mat-expansion-panel-header>My <em> &nbsp;Posts</em></mat-expansion-panel-header>
+      <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="center center" >
+        <mat-list style="width: 100%">
+          <mat-list-item *ngFor="let message of messages; last as last">
+            <img mat-list-avatar [src]="message.avater" alt="Image of {{message.title}}">
+            <h4 mat-line>{{message.title}}</h4>
+            <p mat-line> {{message.name}} </p>
+            <p mat-line class="demo-secondary-text">{{message.text}} </p>
+            <button mat-icon-button>
+              <mat-icon>favorite</mat-icon>
+            </button>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel #panel3 *ngIf="showPanel3" [hideToggle]="hideToggle">
+      <mat-expansion-panel-header>Section 3</mat-expansion-panel-header>
+      <mat-checkbox #showButtons>Reveal Buttons Below</mat-checkbox>
+      <mat-action-row *ngIf="showButtons.checked">
+        <button mat-button (click)="panel2.expanded = true">OPEN SECTION 2</button>
+        <button mat-button (click)="panel3.expanded = false">CLOSE</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+
+

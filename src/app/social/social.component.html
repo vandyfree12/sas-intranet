@@ -1,0 +1,282 @@
+<div  [@fallIn]>
+  <mat-toolbar class="bg-image bg-image-social">
+    <mat-toolbar-row></mat-toolbar-row>
+    <mat-toolbar-row></mat-toolbar-row>
+    <mat-toolbar-row>
+      <span fxFlex></span>
+      <button mat-raised-button color="accent" class="ml-xs mr-xs">Send Message</button>
+      <button mat-raised-button color="warn" class="ml-xs mr-xs">Follow</button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
+  <div class="wrapper">
+    <div fxLayout="row" fxLayoutWrap="wrap" *ngIf="profile">
+      <div fxFlex.gt-sm="40" fxFlex="100">
+        <mat-card>
+          <mat-card-content>
+            <div fxLayout="row">
+              <div fxFlex="55">
+                <h1 class="ma-0">{{profile.user.name}} <b>{{profile.lastName}}</b></h1>
+                <small>{{profile.email}}</small>
+                <p class="mt-xs mb-xs">{{profile.position}}</p>
+                <a href="javascript:;" class="block mt-xs mb-xs">info@sasghana.com</a>
+                <a href="javascript:;" class="block mt-xs mb-xs">www.sasghana.com</a>
+                <button mat-raised-button color="primary">Edit Profile</button>
+              </div>
+              <div fxFlex="45">
+                <figure>
+                  <div class="text-xs-center">
+                    <img src="{{profile.user.avatar}}" alt="" class="radius-circle" width="80%">
+                    <!--<ngx-avatar gravatarId="{{email}}" size="130"></ngx-avatar>-->
+
+                    <div class="text-md mt10">Account Usage</div>
+                  </div>
+                  <div class="ma-xs">
+                    <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                  </div>
+                  <div  class="text-xs-center"><small>234Gb of 879Gb</small></div>
+                </figure>
+              </div>
+            </div>
+          </mat-card-content>
+          <hr>
+          <mat-card-content>
+            <div fxLayout="row" class="text-xs-center">
+              <div fxFlex="33">
+                <h1 class="ma-0"><b>23,8K</b></h1>
+                <small>Followers</small>
+              </div>
+              <div fxFlex="33">
+                <h1 class="ma-0"><b>569</b></h1>
+                <small>Following</small>
+              </div>
+              <div fxFlex="33">
+                <h1 class="ma-0"><b>67</b></h1>
+                <small>Posts</small>
+              </div>
+            </div>
+          </mat-card-content>
+          <hr>
+          <mat-card-content>
+            <h4 class="mt-0">About</h4>
+            <p>{{profile.bio}}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div fxFlex.gt-sm="60" fxFlex="100">
+        <div fxLayout="column">
+          <mat-card class="profile-post">
+            <form  fxLayout="row">
+              <textarea placeholder="What's on your mind" rows="6"></textarea>
+            </form>
+            <hr>
+            <mat-card-actions>
+              <div fxLayout="row">
+                <button mat-icon-button>
+                  <mat-icon>insert_photo</mat-icon>
+                </button>
+                <button mat-icon-button>
+                  <mat-icon>insert_link</mat-icon>
+                </button>
+                <button mat-icon-button>
+                  <mat-icon>location_on</mat-icon>
+                </button>
+                <span fxFlex></span>
+                <button mat-raised-button color="primary">Post</button>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+          <mat-card>
+            <mat-tab-group>
+              <mat-tab>
+                <ng-template matTabLabel>Activity</ng-template>
+                <div class="activity-stream">
+                  <mat-card class="shadow-none">
+                    <mat-card-header>
+                      <img matCardAvatar src="assets/images/face1.jpg">
+                      <mat-card-title>Received a call from Joel</mat-card-title>
+                      <mat-card-subtitle>Header subtitle</mat-card-subtitle>
+                    </mat-card-header>
+                  </mat-card>
+                  <mat-card class="shadow-none">
+                    <mat-card-header>
+                      <img matCardAvatar src="assets/images/avatar.jpg">
+                      <mat-card-title>Header title</mat-card-title>
+                      <mat-card-subtitle>Header subtitle</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+                      <a href="javascript:;" class="mr-1">Like</a>
+                      <a href="javascript:;">Comment</a>
+                    </mat-card-content>
+                  </mat-card>
+                  <mat-card class="shadow-none">
+                    <mat-card-header>
+                      <img matCardAvatar src="assets/images/face2.jpg">
+                      <mat-card-title>Header title</mat-card-title>
+                      <mat-card-subtitle>Added a photo</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <img src="https://source.unsplash.com/300x150">
+                    </mat-card-content>
+                  </mat-card>
+                  <mat-card class="shadow-none">
+                    <mat-card-header>
+                      <img matCardAvatar src="assets/images/face3.jpg">
+                      <mat-card-title>Header title</mat-card-title>
+                      <mat-card-subtitle>Header subtitle</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+                    </mat-card-content>
+                  </mat-card>
+                  <mat-card class="shadow-none">
+                    <mat-card-header>
+                      <img matCardAvatar src="assets/images/face4.jpg">
+                      <mat-card-title>Uploaded new file</mat-card-title>
+                      <mat-card-subtitle>Header subtitle</mat-card-subtitle>
+                    </mat-card-header>
+                  </mat-card>
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template matTabLabel>Bio</ng-template>
+                <mat-card-content>
+                  <h4 class="mt-0 mb-1">Basic Information</h4>
+                  <div fxLayout="row" layout-align="center">
+                    <div class="pr-1" fxFlex>
+                      <div fxLayout="column" class="mb-1">
+                        <span class="text-md">Mobile</span>
+                        <strong>+123 456 789 00</strong>
+                      </div>
+
+                      <div fxLayout="column" class="mb-1">
+                        <span class="text-md">Birthday</span>
+                        <strong>30.09.2000</strong>
+                      </div>
+
+                      <div fxLayout="column" class="mb-1">
+                        <span class="text-md">Country</span>
+                        <strong>Ghana</strong>
+                      </div>
+
+                      <div fxLayout="column">
+                        <span class="text-md">Occupation</span>
+                        <strong>{{profile.position}}</strong>
+                      </div>
+
+                    </div>
+                    <div class="pl-1" fxFlex>
+                      <div fxLayout="column" class="mb-1">
+                        <span class="text-md">Extension</span>
+                        <strong>0075</strong>
+                      </div>
+
+                      <div fxLayout="column" class="mb-1">
+                        <span class="text-md">Mobile</span>
+                        <strong>N/A</strong>
+                      </div>
+
+                      <div fxLayout="column" class="mb-1">
+                        <span class="text-md">Phone</span>
+                        <strong>+456 65 345 534</strong>
+                      </div>
+
+                      <div fxLayout="column">
+                        <span class="text-md">Facebook</span>
+                        <strong>@geraldmorris</strong>
+                      </div>
+
+                    </div>
+                  </div>
+                </mat-card-content>
+                <hr>
+                <mat-card-content>
+                  <h6 class="mt-0 mb-1">Bio</h6>
+                  <p>{{profile.bio}}</p>
+                </mat-card-content>
+                <hr>
+              </mat-tab>
+              <mat-tab>
+                <ng-template matTabLabel>Photos</ng-template>
+                <mat-grid-list cols="3">
+                  <mat-grid-tile *ngFor="let id of images" rowHeight="4:3">
+                    <img src="assets/images/unsplash/{{ id }}.jpg" alt="Card image cap"/>
+                    <mat-grid-tile-footer>
+                      <h3 matLine>{{ id }}</h3>
+                      <span matLine>Gallery image: {{ id }}</span>
+                      <mat-icon>favorite</mat-icon>
+                    </mat-grid-tile-footer>
+                  </mat-grid-tile>
+                </mat-grid-list>
+              </mat-tab>
+              <mat-tab>
+                <ng-template matTabLabel>Edit</ng-template>
+                <div class="py-1 px-xs">
+                  <form>
+                    <div class="px-xs pb-1">
+                      <mat-form-field class="w-100">
+                        <input matInput placeholder="Company (disabled)" disabled value="Google">
+                      </mat-form-field>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutWrap="wrap" class="w-100 pb-1">
+                      <div fxFlex="50" class="px-xs">
+                        <mat-form-field class="w-100" floatLabel="never">
+                          <input matInput placeholder="First name">
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="50" class="px-xs">
+                        <mat-form-field class="w-100">
+                          <input matInput placeholder="Long Last Name That Will Be Truncated">
+                        </mat-form-field>
+                      </div>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutWrap="wrap" class="w-100 pb-1">
+                      <div fxFlex="50" class="px-xs">
+                        <mat-form-field class="w-100">
+                          <textarea matInput placeholder="Address">1600 Amphitheatre Pkway</textarea>
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="50" class="px-xs">
+                        <mat-form-field class="w-100">
+                          <textarea matInput placeholder="Address 2"></textarea>
+                        </mat-form-field>
+                      </div>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutWrap="wrap" class="w-100">
+                      <div fxFlex="33.33">
+                        <mat-form-field class="w-100" class="px-xs">
+                          <input matInput placeholder="City" value="Mountain View">
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="33.33" class="px-xs">
+                        <mat-form-field class="w-100">
+                          <input matInput placeholder="State" maxLength="2" value="CA">
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="33.33" class="px-xs">
+                        <mat-form-field class="w-100">
+                          <input matInput #postalCode maxLength="5" placeholder="Postal Code" value="94043"
+                                  pattern="[0-9]{5}">
+                          <mat-hint align="end">
+                            <mat-icon>mode_edit</mat-icon>
+                            <span aria-live="polite">{{postalCode.value.length}} / 5</span>
+                          </mat-hint>
+                        </mat-form-field>
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+.mat-header-row,
+.mat-row {
+    padding: .5rem 1rem;
+}
+
+.mat-column-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    overflow: hidden;
+}
+
+.mat-column-price{
+    max-width: 100px;
+    text-align: center;
+}
+
+.mat-column-quantity{
+    max-width: 70px;
+    text-align: center;
+}
+
+.mat-column-amount{
+    max-width: 100px;
+    text-align: right;
+}

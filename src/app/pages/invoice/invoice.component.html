@@ -1,0 +1,99 @@
+<mat-card>
+  <mat-card-content>
+    <div class="mb-1">
+      <h1 class="mt-0 font-weight-light">INVOICE</h1>
+      <a href="javascript:;">company@address.com</a>
+    </div>
+
+    <div fxLayout="row" fxLayoutWrap="wrap">
+      <div fxFlex.gt-xs="50" fxFlex="100">
+        <h4 class="my-0">Client</h4>
+        <div fxLayout="column">
+          <span>Invoice No: #0001</span>
+          <span>Date issued: 01 Jun 2017</span>
+          <span>Due date: 31 May 2017</span>
+        </div>
+      </div>
+      <div fxFlex.gt-xs="50" fxFlex="100" class="text-sm-right text-xs-left">
+        <h4 class="my-0">Company LLC</h4>
+        <div fxLayout="column">
+        <span>company@address.com</span>
+        <span>1234 Main</span>
+        <span>Apt. 4B</span>
+        <span>Springfield, ST 54321</span>
+      </div>
+      </div>
+    </div>
+  </mat-card-content>
+
+  <mat-card-content class="pl-0 pr-0 pb-0">
+
+    <mat-table #table [dataSource]="dataSource">
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <strong>{{element.title}}</strong><br/>
+            <em class="mat-text-muted text-md">{{element.subtitle}}</em>
+        </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.price | currency:'USD':'symbol':'1.2-2'}} </mat-cell>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="quantity">
+        <mat-header-cell *matHeaderCellDef> Quantity </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.quantity}} </mat-cell>
+      </ng-container>
+  
+      <!-- Color Column -->
+      <ng-container matColumnDef="amount">
+        <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+        <mat-cell *matCellDef="let element"> <strong>{{ (element.price * element.quantity) | currency:'USD':'symbol':'1.2-2'}}</strong> </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </mat-card-content>
+
+  <mat-card-content>
+    <div  fxLayout="row" fxLayoutWrap="wrap">
+      <div fxFlex.gt-sm="25" fxFlex.gt-xs="50" fxFlex="100" class="mt-1 mb-1">
+        <h6 class="text-uppercase text-mat ma-0 text-bold font-weight-light">Subtotal</h6>
+        <h1 class="ma-0 font-weight-light">{{getSubTotal() | currency:'USD':'symbol':'1.2-2'}}</h1>
+      </div>
+      <div fxFlex.gt-sm="25" fxFlex.gt-xs="50" fxFlex="100" class="mt-1 mb-1 text-sm-right text-mat-left">
+        <h6 class="text-uppercase text-mat ma-0 text-bold font-weight-light">Tax (15%)</h6>
+        <h1 class="ma-0 font-weight-light">{{getCalculatedTax() | currency:'USD':'symbol':'1.2-2'}}</h1>
+      </div>
+      <div fxFlex.gt-sm="25" fxFlex.gt-xs="50" fxFlex="100" class="mt-1 mb-1 pl-xs pr-xs">
+        <h6 class="text-uppercase text-mat ma-0 text-bold font-weight-light">Discount</h6>
+        <h1 class="ma-0 font-weight-light">$0.00</h1>
+      </div>
+      <div fxFlex.gt-sm="25" fxFlex.gt-xs="50" fxFlex="100" class="mt-1 mb-1 text-xs-left text-sm-right">
+        <h6 class="text-uppercase text-sm ma-0 text-bold font-weight-light">Total</h6>
+        <h1 class="ma-0 mat-text-accent font-weight-light">{{ getTotal() | currency:'USD':'symbol':'1.2-2'}}</h1>
+      </div>
+    </div>
+  </mat-card-content>
+  <hr>
+
+  <mat-card-content>
+    <p class="text-md">
+      <strong>
+        PAYMENT TERMS AND POLICIES
+      </strong>
+      All accounts are to be paid within 7 days from receipt of invoice. To be paid by cheque or credit card or direct payment online. If account is not paid within 7 days the credits details supplied as confirmation of work undertaken will be charged the agreed
+      quoted fee noted above. If the Invoice remails unpaid. our dept recovery agency, Urban, may charge you a fee of 25% of the unpaid portion of the
+      invoice amount and other legal and collection costs not covered by the fee.
+    </p>
+  </mat-card-content>
+</mat-card>

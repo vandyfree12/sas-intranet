@@ -1,0 +1,18 @@
+:host ::ng-deep {
+  display: block;
+  .chart-container {
+    height: 400px;
+    width: 100%;
+    display: block;
+  }
+  .ngx-charts .gridline-path {
+    stroke: rgba(0, 0, 0, 0.096);
+    stroke-width: 0.5;
+  }
+  .mat-expansion-panel {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 1px rgba(0, 0, 0, 0.05) !important;
+  }
+  pre {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,36 @@
+:host ::ng-deep {
+  .sebm-google-map-container,
+  .chart-container {
+    height: 300px;
+    width: 100%;
+    display: block;
+  }
+  .ngx-charts .gridline-path {
+    stroke: rgba(0, 0, 0, 0.096);
+    stroke-width: 0.5;
+  }
+  .small-chart .chart-container {
+    height: 200px;
+  }
+  .small-chart .ngx-charts text {
+    fill: #ffffff !important;
+  }
+  .mat-column-position {
+    max-width: 40px;
+  }
+  .mat-column-value {
+    max-width: 100px;
+    text-align: right;
+  }
+
+  mat-grid-tile {
+    background-image: url("/assets/images/sas-experience.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+  }
+  .mat-card {
+    display: inline-block;
+    width: 100%;
+  }
+}

@@ -1,0 +1,31 @@
+<mat-progress-bar class="page-loader" [value]="loader.progress$|async" *ngIf="loader.progress$|async" [ngStyle]="{height: '2px'}"></mat-progress-bar>
+<div class="app" [dir]="options.dir" [ngClass]="{
+  'app-dark': options.dark,
+  'boxed': options.boxed,
+  'collapsed-sidebar': options.collapsed,
+  'side-panel-opened': sidePanelOpened,
+  'side-panel-closed': !sidePanelOpened }">
+
+  <app-header (toggleSidenav)="toggleSidenav()"></app-header>
+
+  <mat-sidenav-container class="app-inner" (click)="updatePS()">
+
+    <mat-sidenav #sidemenu class="sidebar-panel"
+      [mode]="isOver() ? 'over' : 'side'"
+      [opened]="!isOver()"
+      (open)="sidePanelOpened = true"
+      (close)="sidePanelOpened = false"
+      [perfectScrollbar]="config"
+      [disabled]="mediaMatcher.matches">
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
+
+    <div [perfectScrollbar]="config" [disabled]="mediaMatcher.matches">
+      <router-outlet [className]="routeData.css"></router-outlet>
+    </div>
+
+  </mat-sidenav-container>
+
+</div>
+
+<app-options (messageEvent)="receiveMessage($event)" (toggleFullscreen)="toggleFullscreen()"></app-options>

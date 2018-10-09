@@ -1,0 +1,27 @@
+:host ::ng-deep {
+  display: block;
+  mat-sidenav {
+    width: 250px;
+  }
+  .mat-drawer-container {
+    overflow: visible;
+    .mat-sidenav {
+      overflow: visible;
+    }
+  }
+  .mat-drawer-content {
+    padding: 0;
+  }
+  @media (min-width: 959px) {
+    .mat-drawer-side {
+      background-color: rgba(0, 0, 0, 0.04);
+      border-left: 1px solid rgba(0, 0, 0, 0.04);
+      border-right: 1px solid rgba(0, 0, 0, 0.04);
+      box-shadow: none!important;
+    }
+  }
+  .mat-slider-horizontal {
+    width: 100%;
+    min-width: 1px;
+  }
+}

@@ -1,0 +1,31 @@
+<div fxLayout="row" fxLayoutWrap="wrap">
+  <div fxFlex.gt-sm="70" fxFlex="100">
+    <mat-card>
+      <mat-toolbar class="text-base">NG Dynamic Forms</mat-toolbar>
+      <mat-card-content>
+        <form [formGroup]="formGroup">
+          <dynamic-material-form [group]="formGroup"
+            [layout]="formLayout"
+            [model]="formModel"
+            (dfBlur)="onBlur($event)"
+            (dfChange)="onChange($event)"
+            (dfFocus)="onFocus($event)"
+            (matEvent)="onMatEvent($event)">
+
+          </dynamic-material-form>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div fxFlex.gt-sm="30" fxFlex="100">
+    <mat-card>
+      <mat-toolbar class="text-base">JSON</mat-toolbar>
+      <mat-card-content>
+        <div fxFlex.gt-sm="30" fxFlex="100">
+          <pre>{{formGroup.value | json}}</pre>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

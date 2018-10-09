@@ -1,0 +1,20 @@
+@import "../../assets/styles/scss/components/messages";
+
+:host ::ng-deep {
+  display: block;
+  .mat-sidenav {
+    position: absolute!important;
+    width: 200px;
+  }
+  .mat-drawer-content {
+    padding: 0;
+  }
+  @media (min-width: 959px) {
+    .mat-drawer-side {
+      background-color: rgba(0, 0, 0, 0.04);
+      border-left: 1px solid rgba(0, 0, 0, 0.04);
+      border-right: 1px solid rgba(0, 0, 0, 0.04);
+      box-shadow: none!important;
+    }
+  }
+}

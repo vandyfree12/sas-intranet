@@ -1,0 +1,135 @@
+<mat-card class="demo-card demo-basic">
+
+<!--<mat-card>-->
+  <!--<mat-toolbar class="text-base">matAccordion</mat-toolbar>-->
+  <!--<mat-card-content>-->
+    <!--<div>-->
+      <!--<p>Accordion Options</p>-->
+      <!--<div>-->
+        <!--<mat-slide-toggle [(ngModel)]="multi">Allow Multi Expansion</mat-slide-toggle>-->
+        <!--<mat-slide-toggle [(ngModel)]="hideToggle">Hide Indicators</mat-slide-toggle>-->
+        <!--<mat-slide-toggle [(ngModel)]="disabled">Disable Panel 2</mat-slide-toggle>-->
+        <!--<mat-slide-toggle [(ngModel)]="showPanel3">Show Panel 3</mat-slide-toggle>-->
+      <!--</div>-->
+      <!--<p>Accordion Style</p>-->
+      <!--<mat-radio-group [(ngModel)]="displayMode">-->
+        <!--<mat-radio-button value="default">Default</mat-radio-button>-->
+        <!--<mat-radio-button value="flat">Flat</mat-radio-button>-->
+      <!--</mat-radio-group>-->
+      <!--<p>Accordion Panel(s)</p>-->
+      <!--<div>-->
+        <!--<mat-checkbox [(ngModel)]="panel1.expanded">Panel 1</mat-checkbox>-->
+        <!--<mat-checkbox [(ngModel)]="panel2.expanded">Panel 2</mat-checkbox>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<br>-->
+
+  <!--</mat-card-content>-->
+<!--</mat-card>-->
+
+
+<mat-accordion [multi]="multi" class="mat-expansion-demo-width">
+  <mat-expansion-panel #panel1  [hideToggle]="hideToggle">
+    <mat-expansion-panel-header>Create <em> &nbsp; Issue </em> &nbsp; +</mat-expansion-panel-header>
+    <form [formGroup]="form" (ngSubmit)="onPostIssue()">
+      <div class="px-xs pb-1">
+        <mat-form-field class="w-100">
+          <input matInput placeholder="Title" type="text" [formControl]="form.controls['title']">
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutWrap="wrap" class="w-100 pb-1">
+        <div fxFlex="50" class="px-xs">
+          <mat-form-field class="w-100" floatLabel="">
+            <input matInput placeholder="Reported By" type="text" [formControl]="form.controls['reportedby']" value="{{username}}">
+          </mat-form-field>
+        </div>
+        <div fxFlex="50" class="px-xs">
+          <!--<mat-form-field class="w-100">-->
+            <!--<input matInput placeholder="Status" type="text" [formControl]="form.controls['status']" value="Open">-->
+          <!--</mat-form-field>-->
+
+          <mat-form-field class="w-100">
+            <mat-select placeholder="Status" [formControl]="form.controls['status']">
+              <mat-option *ngFor="let status of status" [value]="status.value"> <em>{{ status.viewValue }}</em></mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutWrap="wrap" class="w-100 pb-1">
+        <div fxFlex="50" class="px-xs">
+          <mat-form-field class="w-100">
+            <textarea matInput placeholder="Issue Description" [formControl]="form.controls['description']"></textarea>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50" class="px-xs">
+          <mat-form-field class="w-100">
+            <textarea matInput placeholder="Areas Affected" [formControl]="form.controls['areasAffected']"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutWrap="wrap" class="w-100">
+        <div fxFlex="33.33">
+
+          <mat-form-field class="w-100">
+            <mat-select placeholder="Assign To" [formControl]="form.controls['assignto']">
+              <mat-option *ngFor="let assign of assignto" [value]="assign.value"> <em>{{ assign.viewValue }}</em></mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div fxFlex="33.33" class="px-xs">
+
+          <mat-form-field class="w-100">
+            <mat-select placeholder="Department" [formControl]="form.controls['department']">
+              <mat-option *ngFor="let depart of department" [value]="depart.value"> <em>{{ depart.viewValue }}</em></mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </div>
+        <div fxFlex="33.33" class="px-xs">
+
+          <mat-form-field class="w-100">
+            <mat-select placeholder="Priority" [formControl]="form.controls['priority']">
+              <mat-option *ngFor="let prior of priority" [value]="prior.value"> <em>{{ prior.viewValue }}</em></mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <button mat-raised-button color="primary" type="submit" >Submit</button>
+
+    </form>
+
+  </mat-expansion-panel>
+
+  <mat-expansion-panel #panel2 [hideToggle]="hideToggle" [disabled]="disabled">
+    <mat-expansion-panel-header>View Reported <em> &nbsp;Issues</em></mat-expansion-panel-header>
+    <ngx-datatable
+      class='material'
+      [columns]="columns"
+      [columnMode]="'force'"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [rowHeight]="50"
+      [scrollbarV]="true"
+      [scrollbarH]="true"
+      [limit]="10"
+      [rows]='rows'>
+    </ngx-datatable>
+
+  </mat-expansion-panel>
+
+  <mat-expansion-panel #panel3 *ngIf="showPanel3" [hideToggle]="hideToggle">
+    <mat-expansion-panel-header>Section 3</mat-expansion-panel-header>
+    <mat-checkbox #showButtons>Reveal Buttons Below</mat-checkbox>
+    <mat-action-row *ngIf="showButtons.checked">
+      <button mat-button (click)="panel2.expanded = true">OPEN SECTION 2</button>
+      <button mat-button (click)="panel3.expanded = false">CLOSE</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+

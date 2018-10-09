@@ -1,0 +1,330 @@
+<mat-accordion>
+  <mat-expansion-panel #overview [expanded]="step === 0">
+    <mat-expansion-panel-header>Overview</mat-expansion-panel-header>
+    <div>
+      <p>
+        This documentation is to help you understand the template's structure. Please go through the documentation carefully to understand how this template is made and how to edit this properly. Basic HTML, CSS(SASS) and JS(Typescript) knowledge is required to customize this template.
+      </p>
+      <p>
+        If you have any questions that are beyond the scope of this help file, please feel free to get in touch.
+      </p>
+      <div class="mat-blue-A100 mat-text-white mb-xs pa-xs">
+        Support requests can go through the form
+        <a href="http://themeforest.net/user/iamnyasha/?ref=iamnyasha" target="_blank">
+          on my ThemeForest profile page
+        </a>
+        or via email.
+      </div>
+
+      <div class="mat-red-A100 mat-text-white mb-xs pa-xs">
+        You should have some knowledge of teminal/command line, NPM, SCSS and Typescript inorder to use this template.<br/> This is also an angular template, static files are not included and neither will this item work with Wordpress.
+      </div>
+
+      <p>
+        Support for my items includes:
+      </p>
+      <ul>
+        <li><a>
+          Responding to questions or problems regarding the item and its features
+        </a></li>
+        <li><a>
+          Fixing bugs and reported issues
+        </a></li>
+        <li><a>
+          Providing updates to ensure compatibility with new software versions
+        </a></li>
+      </ul>
+      <p>
+        Item support does not include:
+      </p>
+      <ul>
+        <li><a>
+          Customization and installation services
+        </a></li>
+        <li><a>
+          Support for third party software and plug-ins
+        </a></li>
+      </ul>
+      <p>
+        Before seeking support please:
+      </p>
+      <ul>
+        <li><a>
+          Make sure your question is a valid item Issue and not a customization request.
+        </a></li>
+        <li><a>
+          Make sure you have read through the documentation and any related guides before asking support on how to accomplish a task.
+        </a></li>
+        <li><a>
+          Make sure to double check the item FAQs.
+        </a></li>
+        <li><a>
+          If you have customized your item and now have an issue, back-track to make sure you didn't make a mistake. If you have made changes and can't find the issue, please provide us with your changelog.
+        </a></li>
+        <li><a>
+          Most of the time we find that the solution to people's issues can be solved with a simple "Google Search". You might want to try that before seeking support. You might be able to fix the issue yourself much quicker than we can respond to your request.
+        </a></li>
+        <li><a>
+          Make sure to state the name of the item you are having issues with when requesting support via ThemeForest.
+        </a></li>
+      </ul>
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel #what>
+    <mat-expansion-panel-header>What is it</mat-expansion-panel-header>
+    <div ngbPanelContent>
+      <p>
+        Node is a creative material 2 design admin template built for Angular. It comes out of the box with AoT and lazy loading support, Language translation , RTL support and light and dark colour schemes. With this, you get all you need to start working on your SAAS, CRM, CMS or dashboard based project.
+      </p>
+      <p>Key features:</p>
+      <ul>
+        <li>Angular 5 and beyond</li>
+        <li>angular-cli</li>
+        <li>LTR and RTL support</li>
+        <li>Clean design</li>
+        <li>Color themes</li>
+        <li>i18n translation</li>
+      </ul>
+      <p>
+        Once you've purchased Node please consider giving a 5 star rating, it helps in pushing out more updates and adding a lot more features.
+      </p>
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel #started>
+    <mat-expansion-panel-header>Getting started</mat-expansion-panel-header>
+    <div ngbPanelContent>
+      <p>This template is built with angular-cli and requires Node 6.9.0+ and NPM 3+ to be installed.</p>
+
+      <p class="text-uppercase mt-3 mb-1"><strong>Installing the prerequisites</strong></p>
+      <p><strong>Node.js and NPM:</strong> You can download Node.js from <a href="https://nodejs.org">https://nodejs.org</a>. NPM comes bundled with Node.js</p>
+
+      <p><strong>angular-cli:</strong> You can install angular-cli by executing from your terminal <b>npm install -g @angular/cli</b>. More details can be found here <a href="https://github.com/angular/angular-cli">https://github.com/angular/angular-cli</a> </p>
+
+      <p class="text-uppercase mt-3 mb-1"><strong>Installing the npm packages</strong></p>
+      <p>Before proceding you'll need to install packages. You can do this by running <strong>npm install</strong> from the root of your project in your command line to install all the necessary dependencies.</p>
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel #cmd>
+    <mat-expansion-panel-header>Commands</mat-expansion-panel-header>
+    <div ngbPanelContent>
+      <p class="text-uppercase mt-3 mb-1"><strong>Development server</strong></p>
+      <p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The app will automatically reload if you change any of the source files.</p>
+
+      <p class="text-uppercase mt-3 mb-1"><strong>Code scaffolding</strong></p>
+      <p>Run <code>ng generate component component-name</code> to generate a new component. You can also use <code>ng generate directive/pipe/service/class</code>.</p>
+
+      <p class="text-uppercase mt-3 mb-1"><strong>Building</strong></p>
+      <p>Run <code>ng build</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory. Use the <code>--prod</code> flag for a production build. Use <code>--aot</code> flag for a AoT build</p>
+
+      <p class="text-uppercase mt-3 mb-1"><strong>Further help</strong></p>
+      <p>To get more help on the <code>angular-cli</code> use <code>ng --help</code> or go check out <a href="https://github.com/angular/angular-cli">https://github.com/angular/angular-cli</a>.</p>
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel #helpers>
+    <mat-expansion-panel-header>Helpers</mat-expansion-panel-header>
+    <div ngbPanelContent>
+      <p>
+        These are all the available helper classes used in the template. Use these alongside the utility classess provided by bootstrap.
+      </p>
+
+      <p class="text-uppercase mt-3 mb-1"><strong>Helper classes</strong></p>
+      <p>These are all the available helper classes used in the template</p>
+
+      <p class="text-uppercase mt-3 mb-1"><strong>General</strong></p>
+      <ul>
+        <li>
+          <code>.radius-none</code> (no round corners)
+        </li>
+        <li>
+          <code>.radius-round</code> (border corners based on $border-radius-base)
+        </li>
+        <li>
+          <code>.radius-circle</code> (circle radius corners)
+        </li>
+        <li>
+          <code>.overflow-visible</code>
+        </li>
+        <li>
+          <code>.overflow-hidden</code>
+        </li>
+        <li>
+          <code>.overflow-auto</code>
+        </li>
+        <li>
+          <code>.block</code> (display block)
+        </li>
+        <li>
+          <code>.button-block</code>
+        </li>
+        <li>
+          <code>.inline-block</code>
+        </li>
+        <li>
+          <code>.center-block</code>
+        </li>
+        <li>
+          <code>.relative</code> (position relative)
+        </li>
+        <li>
+          <code>.fixed</code>
+        </li>
+        <li>
+          <code>.absolute</code>
+        </li>
+        <li>
+          <code>.shadow-none</code>
+        </li>
+        <li>
+          <code>.border-none</code>
+        </li>
+        <li>
+          <code>.background-none</code>
+        </li>
+      </ul>
+
+      <p class="text-uppercase mt-3 mb-1"><strong>Background colors (Based on material palette)</strong></p>
+      <p>Background colors are named using the format: md-&#123;color&#125;-&#123;shade&#125;</p>
+
+      <p><b>Where color is one of:</b> red, pink , purple, deep-purple, indigo, blue, light-blue, cyan, teal, green, light-green, lime, yellow, amber, orange, deep-orage, brown, grey, blue-grey</p>
+      <p><b>Where shade is one of:</b> 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700</p>
+      <p>e.g md-red-500</p>
+
+      <p class="text-uppercase mt-3 mb-1"><strong>Spacing</strong></p>
+      <p>Spacing classes are named using the format: &#123;property&#125;&#123;sides&#125;-&#123;size&#125;</p>
+      <p><b>Where property is one of:</b></p>
+      <ul class="">
+        <li>m - for classes that set margin</li>
+        <li>p - for classes that set padding</li>
+      </ul>
+      <p><b>Where sides is one of:</b></p>
+      <ul class="">
+        <li><code>t</code> - for classes that set <code>margin-top</code> or <code>padding-top</code></li>
+        <li><code>b</code> - for classes that set <code>margin-bottom</code> or <code>padding-bottom</code></li>
+        <li><code>l</code> - for classes that set <code>margin-left</code> or <code>padding-left</code></li>
+        <li><code>r</code> - for classes that set <code>margin-right</code> or <code>padding-right</code></li>
+        <li><code>x</code> - for classes that set both <code>*-left</code> and <code>*-right</code></li>
+        <li><code>y</code> - for classes that set both <code>*-top</code> and <code>*-bottom</code></li>
+        <li><code>a</code> - for classes that set a <code>margin</code> or <code>padding</code> on all 4 sides of the element</li>
+      </ul>
+      <p><b>Where size is one of:</b></p>
+      <ul class="">
+        <li><code>0</code> - for classes that eliminate the <code>margin</code> or <code>padding</code> by setting it to <code>0</code></li>
+        <li><code>1</code> - (by default) for classes that set the <code>margin</code> or <code>padding</code> to <code>$spacer-x</code> or <code>$spacer-y</code></li>
+        <li><code>2</code> - (by default) for classes that set the <code>margin</code> or <code>padding</code> to <code>$spacer-x * 1.5</code> or <code>$spacer-y * 1.5</code></li>
+        <li><code>3</code> - (by default) for classes that set the <code>margin</code> or <code>padding</code> to <code>$spacer-x * 3</code> or <code>$spacer-y * 3</code></li>
+      </ul>
+
+      <p class="text-uppercase mt-3 mb-1"><strong>Text</strong></p>
+      <ul class="">
+        <li>
+          <code>.text-justify</code>
+        </li>
+        <li>
+          <code>.text-nowrap</code>
+        </li>
+        <li>
+          <code>.text-truncate</code>
+        </li>
+        <li>
+          <code>.text-&#123;xs, sm, md, lg&#125;-&#123;left, center, right&#125;</code>
+        </li>
+        <li>
+          <code>.text-lowercase</code>
+        </li>
+        <li>
+          <code>.text-uppercase</code>
+        </li>
+        <li>
+          <code>.text-capitalize</code>
+        </li>
+        <li>
+          <code>.text-xs</code>
+        </li>
+        <li>
+          <code>.text-sm</code>
+        </li>
+        <li>
+          <code>.text-md</code>
+        </li>
+        <li>
+          <code>.text-lg</code>
+        </li>
+        <li>
+          <code>.text-xl</code>
+        </li>
+        <li>
+          <code>.text-xxl</code>
+        </li>
+        <li>
+          <code>.text-weight-normal</code>
+        </li>
+        <li>
+          <code>.text-weight-bold</code>
+        </li>
+        <li>
+          <code>.text-italic</code>
+        </li>
+        <li>
+          <code>.text-hide</code>
+        </li>
+      </ul>
+    </div>
+
+  </mat-expansion-panel>
+  <mat-expansion-panel #extra>
+    <mat-expansion-panel-header>Third party components</mat-expansion-panel-header>
+    <div ngbPanelContent>
+      <p>The following is a list of resources, plugins and other assets used in creating this template. Follow the links for more information on how you can use them.</p>
+      <ul>
+        <li>
+          <a href="https://github.com/angular/angular">One framework. Mobile & desktop.</a>
+        </li>
+        <li>
+          <a href="https://github.com/angular/flex-layout">Angular component Layout engine; using flexbox-2016 css</a>
+        </li>
+        <li>
+          <a href="https://github.com/angular/material2">Material Design components for Angular</a>
+        </li>
+        <li>
+          <a href="https://github.com/mattlewis92/angular-calendar">Angular calendar - A flexible calendar component for angular 2.0+ that can display events on a month, week or day view.</a>
+        </li>
+        <li>
+          <a href="https://github.com/swimlane/angular2-data-table">A feature-rich yet lightweight data-table crafted for Angular2</a>
+        </li>
+        <li>
+          <a href="https://github.com/SebastianM/angular2-google-maps">Angular components for Google Maps</a>
+        </li>
+        <li>
+          <a href="https://github.com/500tech/angular2-tree-component">A simple yet powerful tree component for Angular2</a>
+        </li>
+        <li>
+          <a href="https://github.com/valor-software/ng2-dragula">Simple drag and drop with dragula</a>
+        </li>
+        <li>
+          <a href="http://leafletjs.com/">An open-source JavaScript library for mobile-friendly interactive maps</a>
+        </li>
+        <li>
+          <a href="https://github.com/swimlane/ngx-charts">Declarative Charting Framework for Angular2 and beyond!</a>
+        </li>
+        <li>
+          <a href="https://github.com/valor-software/ng2-file-upload">Easy to use Angular2 components for files upload</a>
+        </li>
+        <li>
+          <a href="https://github.com/ngx-translate/core">The internationalization (i18n) library for Angular </a>
+        </li>
+        <li>
+          <a href="https://github.com/yuyang041060120/ng2-validation">angular2 validation</a>
+        </li>
+        <li>
+          <a href="https://github.com/udos86/ng-dynamic-forms">Rapid form development library for Angular</a>
+        </li>
+        <li>
+          <a href="https://github.com/Asymmetrik/ngx-leaflet">Core Leaflet package for Angular.io</a>
+        </li>
+        <li>
+          <a href="https://github.com/aitboudad/ngx-loading-bar">Automatic page loading / progress bar for Angular 2</a>
+        </li>
+      </ul>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

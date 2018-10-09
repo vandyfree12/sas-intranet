@@ -1,0 +1,34 @@
+
+:host ::ng-deep {
+  .sebm-google-map-container {
+    width: 100%;
+    height: 400px;
+    display: flex;
+  }
+
+  .chart-container {
+      height: 300px;
+      width: 100%;
+      display: block;
+  }
+  .ngx-charts .gridline-path {
+      stroke: rgba(0, 0, 0, 0.096);
+      stroke-width: 0.5;
+
+  }
+  .small-chart .chart-container {
+      height: 200px;
+  }
+  .small-chart .ngx-charts text {
+      fill: #ffffff!important;
+  }
+
+  .mat-column-position {
+      max-width: 40px;
+  }
+
+  .mat-column-value{
+      max-width: 100px;
+      text-align: right;
+  }
+}
